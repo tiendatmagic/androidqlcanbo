@@ -4,7 +4,7 @@
     <string name="studentname"></string>
     <string name="btnLoad">Load Data</string>
     <string name="btnAdd">Add</string>
-    <string name="txtData">Data List</string>
+    <string name="txtData">Data Tiendatmagic List</string>
     <string name="btnFind">Find</string>
     <string name="btnDelete">Delete</string>
     <string name="btnUpdate">Update</string>

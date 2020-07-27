@@ -1,5 +1,6 @@
 package com.tiendatmagic.sqlitedemoapplication;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -40,6 +41,18 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         studentnameg = (EditText) findViewById(R.id.phongbannameg);
         studentnameh = (EditText) findViewById(R.id.phongbannameh);
         studentnamehh = (EditText) findViewById(R.id.phongbannamehh);
+        Hello();
+    }
+
+    public void Hello()
+    {
+        // System.exit(0);
+        AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+        dlgAlert.setMessage("© 2020 Copyright by Tiendatmagic - All Rights Reserved | Designed by Tiendatmagic 😀");
+        dlgAlert.setTitle("Bản quyền:");
+        dlgAlert.setPositiveButton("OK", null);
+        dlgAlert.setCancelable(true);
+        dlgAlert.create().show();
     }
 
     public void addPhongban(View view) {
