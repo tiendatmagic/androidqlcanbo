@@ -37,7 +37,8 @@ public class DataHandler extends SQLiteOpenHelper {
         String CREATE_STUDENTS_TABLE = "CREATE TABLE " +
                 TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," +
-                COLUMN_NAME + " TEXT,"+ COLUMN_NAMEA + ","+COLUMN_NAMEB +","+COLUMN_NAMEC+","+COLUMN_NAMED+","+COLUMN_NAMEE+","+COLUMN_NAMEF+","+COLUMN_NAMEG+")";
+                COLUMN_NAME + " TEXT,"+ COLUMN_NAMEA + " TEXT,"+COLUMN_NAMEB +" TEXT,"+COLUMN_NAMEC+" TEXT,"+COLUMN_NAMED+" TEXT,"+
+                COLUMN_NAMEE+" TEXT,"+COLUMN_NAMEF+" TEXT,"+COLUMN_NAMEG+" TEXT)";
 
         //thực thi truy vấn
         db.execSQL(CREATE_STUDENTS_TABLE);
