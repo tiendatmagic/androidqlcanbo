@@ -21,8 +21,9 @@ public class DataHandler extends SQLiteOpenHelper {
     public static final String COLUMN_NAMEC = "PhongbanNamec";
     public static final String COLUMN_NAMED = "PhongbanNamed";
     public static final String COLUMN_NAMEE = "PhongbanNamee";
+    public static final String COLUMN_NAMEF = "PhongbanNamef";
     //phương thức khởi tạo
-    public DataHandler(Context context, String name, String namea, String nameb, String namec, String named, String namee,
+    public DataHandler(Context context, String name, String namea, String nameb, String namec, String named, String namee,String namef,
                        SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
@@ -34,7 +35,7 @@ public class DataHandler extends SQLiteOpenHelper {
         String CREATE_STUDENTS_TABLE = "CREATE TABLE " +
                 TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," +
-                COLUMN_NAME + " TEXT,"+ COLUMN_NAMEA + ","+COLUMN_NAMEB +","+COLUMN_NAMEC+","+COLUMN_NAMED+","+COLUMN_NAMEE+")";
+                COLUMN_NAME + " TEXT,"+ COLUMN_NAMEA + ","+COLUMN_NAMEB +","+COLUMN_NAMEC+","+COLUMN_NAMED+","+COLUMN_NAMEE+","+COLUMN_NAMEF+")";
 
         //thực thi truy vấn
         db.execSQL(CREATE_STUDENTS_TABLE);
@@ -69,9 +70,10 @@ public class DataHandler extends SQLiteOpenHelper {
             String result_4 = cursor.getString(4);
             String result_5 = cursor.getString(5);
             String result_6 = cursor.getString(6);
+            String result_7 = cursor.getString(7);
             //hiển thị mỗi hàng trong một chuỗi
             result += String.valueOf(result_0) + " " + result_1  + " " + result_2 + " " + result_3 + " " + result_4 + " " + result_5
-                    + " " + result_6 +
+                    + " " + result_6 + " " + result_7 +
                     System.getProperty("line.separator");
         }
         //đóng đối tượng Cursor
@@ -93,6 +95,7 @@ public class DataHandler extends SQLiteOpenHelper {
         values.put(COLUMN_NAMEC, student.getPhongbanNamec());
         values.put(COLUMN_NAMED, student.getPhongbanNamed());
         values.put(COLUMN_NAMEE, student.getPhongbanNamee());
+        values.put(COLUMN_NAMEF, student.getPhongbanNamef());
         SQLiteDatabase db = this.getWritableDatabase();
         //chèn dữ liệu đến bảng
         db.insert(TABLE_NAME, null, values);
@@ -121,7 +124,7 @@ public class DataHandler extends SQLiteOpenHelper {
         return result;
     }
 
-    public boolean updateDataHandler(int ID, String name, String namea, String nameb, String namec, String named, String namee) {
+    public boolean updateDataHandler(int ID, String name, String namea, String nameb, String namec, String named, String namee, String namef) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues args = new ContentValues();
         args.put(COLUMN_ID, ID);
@@ -131,6 +134,7 @@ public class DataHandler extends SQLiteOpenHelper {
         args.put(COLUMN_NAMEC, namec);
         args.put(COLUMN_NAMED, named);
         args.put(COLUMN_NAMEE, namee);
+        args.put(COLUMN_NAMEF, namef);
         return db.update(TABLE_NAME, args, COLUMN_ID + " = " + ID, null) > 0;
     }
 
@@ -156,6 +160,7 @@ public class DataHandler extends SQLiteOpenHelper {
             student.setPhongbanNamec(cursor.getString(4));
             student.setPhongbanNamed(cursor.getString(5));
             student.setPhongbanNamee(cursor.getString(6));
+            student.setPhongbanNamef(cursor.getString(7));
             cursor.close();
         } else {
             student = null;
@@ -189,6 +194,7 @@ public class DataHandler extends SQLiteOpenHelper {
                 student.setPhongbanNamec(cursor.getString(4));
                 student.setPhongbanNamed(cursor.getString(5));
                 student.setPhongbanNamee(cursor.getString(6));
+                student.setPhongbanNamef(cursor.getString(7));
                 lst.add(student);
             }while (cursor.moveToNext());
         }
