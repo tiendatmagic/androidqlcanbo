@@ -3,10 +3,12 @@ package com.tiendatmagic.sqlitedemoapplication;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -42,17 +44,25 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         studentnameh = (EditText) findViewById(R.id.phongbannameh);
         studentnamehh = (EditText) findViewById(R.id.phongbannamehh);
         Hello();
+        Helloahihi();
+        
     }
 
     public void Hello()
     {
         // System.exit(0);
         AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
-        dlgAlert.setMessage("© 2020 Copyright by Tiendatmagic - All Rights Reserved | Designed by Tiendatmagic 😀");
+        dlgAlert.setMessage("© 2020 Copyright by Tiendatmagic - All Rights Reserved | Designed by Tiendatmagic 😁😁😁");
         dlgAlert.setTitle("Bản quyền:");
         dlgAlert.setPositiveButton("OK", null);
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
+
+    }
+
+    public void  Helloahihi() {
+        Toast toast=Toast.makeText(SQLiteDemoApplicationActivity.this, "© 2020 Copyright by Tiendatmagic  😀",   Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     public void addPhongban(View view) {
@@ -79,6 +89,17 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         //xóa sạch các PlainText
         studentid.setText("");
         studentname.setText("");
+        studentname.setText("");
+        studentnamea.setText("");
+        studentnameb.setText("");
+        studentnamec.setText("");
+        studentnamed.setText("");
+        studentnamee.setText("");
+        studentnamef.setText("");
+        studentnameg.setText("");
+        studentnameh.setText("");
+        studentnamehh.setText("");
+        Helloahihi();
     }
 
     public void loadPhongbans(View view) {
@@ -90,6 +111,17 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         //xóa sạch các PlainText
         studentid.setText("");
         studentname.setText("");
+        studentname.setText("");
+        studentnamea.setText("");
+        studentnameb.setText("");
+        studentnamec.setText("");
+        studentnamed.setText("");
+        studentnamee.setText("");
+        studentnamef.setText("");
+        studentnameg.setText("");
+        studentnameh.setText("");
+        studentnamehh.setText("");
+        Helloahihi();
     }
 
     public void deletePhongban(View view) {
@@ -100,9 +132,20 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         if (result) {
             studentid.setText("");
             studentname.setText("");
+            studentname.setText("");
+            studentnamea.setText("");
+            studentnameb.setText("");
+            studentnamec.setText("");
+            studentnamed.setText("");
+            studentnamee.setText("");
+            studentnamef.setText("");
+            studentnameg.setText("");
+            studentnameh.setText("");
+            studentnamehh.setText("");
             datalist.setText("Phongban Deleted");
         } else
             studentid.setText("No Match Found");
+        Helloahihi();
     }
 
     public void updatePhongban(View view) {
@@ -115,9 +158,20 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         if (result) {
             studentid.setText("");
             studentname.setText("");
+            studentname.setText("");
+            studentnamea.setText("");
+            studentnameb.setText("");
+            studentnamec.setText("");
+            studentnamed.setText("");
+            studentnamee.setText("");
+            studentnamef.setText("");
+            studentnameg.setText("");
+            studentnameh.setText("");
+            studentnamehh.setText("");
             datalist.setText("Phongban Updated");
         } else
             studentid.setText("No Match Found");
+        Helloahihi();
     }
 
     public void findFirstPhongban(View view) {
@@ -141,10 +195,30 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
                     + System.getProperty("line.separator"));
             studentid.setText("");
             studentname.setText("");
+            studentname.setText("");
+            studentnamea.setText("");
+            studentnameb.setText("");
+            studentnamec.setText("");
+            studentnamed.setText("");
+            studentnamee.setText("");
+            studentnamef.setText("");
+            studentnameg.setText("");
+            studentnameh.setText("");
+            studentnamehh.setText("");
         } else {
             datalist.setText("No Match Found");
             studentid.setText("");
             studentname.setText("");
+            studentname.setText("");
+            studentnamea.setText("");
+            studentnameb.setText("");
+            studentnamec.setText("");
+            studentnamed.setText("");
+            studentnamee.setText("");
+            studentnamef.setText("");
+            studentnameg.setText("");
+            studentnameh.setText("");
+            studentnamehh.setText("");
         }
     }
 
@@ -172,12 +246,32 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
                         + System.getProperty("line.separator");
                 studentid.setText("");
                 studentname.setText("");
+                studentname.setText("");
+                studentnamea.setText("");
+                studentnameb.setText("");
+                studentnamec.setText("");
+                studentnamed.setText("");
+                studentnamee.setText("");
+                studentnamef.setText("");
+                studentnameg.setText("");
+                studentnameh.setText("");
+                studentnamehh.setText("");
             }
             datalist.setText(studentsList);
         } else {
             datalist.setText("No Match Found");
             studentid.setText("");
             studentname.setText("");
+            studentname.setText("");
+            studentnamea.setText("");
+            studentnameb.setText("");
+            studentnamec.setText("");
+            studentnamed.setText("");
+            studentnamee.setText("");
+            studentnamef.setText("");
+            studentnameg.setText("");
+            studentnameh.setText("");
+            studentnamehh.setText("");
         }
     }
 

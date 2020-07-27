@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Quản lý Phòng ban - Tiendatmagic</string>
+    <string name="app_name">Quản lý cán bộ - Tiendatmagic</string>
     <string name="studentid"></string>
     <string name="studentname"></string>
     <string name="btnLoad">Load Data</string>
