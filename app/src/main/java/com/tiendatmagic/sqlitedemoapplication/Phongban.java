@@ -11,13 +11,14 @@ public class Phongban {
     private String _studentnamee;
     private String _studentnamef;
     private String _studentnameg;
+    private String _studentnameh;
     //Các phương thức khởi tạo (constructors)
     //Phương thức khởi tạo mặc định
     public Phongban(){
 
     }
     //Phương thức khởi tạo có tham số
-    public Phongban(int id, String name, String namea, String nameb, String namec, String named, String namee, String namef, String nameg){
+    public Phongban(int id, String name, String namea, String nameb, String namec, String named, String namee, String namef, String nameg, String nameh){
         this._studentid = id;
         this._studentname = name;
         this._studentnamea = namea;
@@ -27,7 +28,7 @@ public class Phongban {
         this._studentnamee = namee;
         this._studentnamef = namef;
         this._studentnameg = nameg;
-
+        this._studentnameh = nameh;
     }
 
     //các phương thức truy cập các biến thành viên
@@ -82,8 +83,11 @@ public class Phongban {
     }
     public void setPhongbanNamef(String namef){  this._studentnamef = namef; }
 
-    public String getPhongbanNameg(){
-        return this._studentnameg;
-    }
+    public String getPhongbanNameg() { return this._studentnameg; }
     public void setPhongbanNameg(String nameg){  this._studentnameg = nameg; }
+
+    public String getPhongbanNameh(){
+        return this._studentnameh;
+    }
+    public void setPhongbanNameh(String nameh){  this._studentnameh = nameh; }
 }

@@ -21,6 +21,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
     EditText studentnamee;
     EditText studentnamef;
     EditText studentnameg;
+    EditText studentnameh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +37,12 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         studentnamee = (EditText) findViewById(R.id.phongbannamee);
         studentnamef = (EditText) findViewById(R.id.phongbannamef);
         studentnameg = (EditText) findViewById(R.id.phongbannameg);
+        studentnameh = (EditText) findViewById(R.id.phongbannameh);
     }
 
     public void addPhongban(View view) {
         //khởi tạo đối tượng xử lý dữ liệu
-        DataHandler dbHandler = new DataHandler(this, null,null, null, null, null, null,
+        DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null,1);
         //nhận id
         int id = Integer.parseInt(studentid.getText().toString());
@@ -53,8 +55,9 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         String namee = studentnamee.getText().toString();
         String namef = studentnamef.getText().toString();
         String nameg = studentnameg.getText().toString();
+        String nameh = studentnameh.getText().toString();
         //gán id và name đến đối tượng Phongban
-        Phongban student = new Phongban(id, name, namea,nameb,namec,named,namee,namef,nameg);
+        Phongban student = new Phongban(id, name, namea,nameb,namec,named,namee,namef,nameg,nameh);
         //thêm đối tượng Phongban đến bảng dữ liệu
         dbHandler.addDataHandler(student);
         //xóa sạch các PlainText
@@ -64,7 +67,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
 
     public void loadPhongbans(View view) {
         //khởi tạo đối tượng xử lý dữ liệu
-        DataHandler dbHandler = new DataHandler(this, null,null, null, null, null, null,
+        DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null,1);
         //hiển thị dữ liệu
         datalist.setText(dbHandler.loadDataHandler());
@@ -74,7 +77,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
     }
 
     public void deletePhongban(View view) {
-        DataHandler dbHandler = new DataHandler(this, null,null, null, null, null, null,
+        DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null,1);
         boolean result = dbHandler.deleteDataHandler(Integer.parseInt(
                 studentid.getText().toString()));
@@ -87,12 +90,12 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
     }
 
     public void updatePhongban(View view) {
-        DataHandler dbHandler = new DataHandler(this, null,null, null, null, null, null,
+        DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null,1);
         boolean result = dbHandler.updateDataHandler(Integer.parseInt(
                 studentid.getText().toString()), studentname.getText().toString(), studentnamea.getText().toString(), studentnameb.getText().toString(),
                 studentnamec.getText().toString(),studentnamed.getText().toString(),studentnamee.getText().toString(),studentnamef.getText().toString(),
-                studentnameg.getText().toString());
+                studentnameg.getText().toString(),studentnameh.getText().toString());
         if (result) {
             studentid.setText("");
             studentname.setText("");
@@ -102,7 +105,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
     }
 
     public void findFirstPhongban(View view) {
-        DataHandler dbHandler = new DataHandler(this, null,null, null, null, null, null,
+        DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null,1);
         Phongban student =
                 dbHandler.findFisrtDataHandler
@@ -117,6 +120,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
                     + " " + student.getPhongbanNamee()
                     + " " + student.getPhongbanNamef()
                     + " " + student.getPhongbanNameg()
+                    + " " + student.getPhongbanNameh()
                     + System.getProperty("line.separator"));
             studentid.setText("");
             studentname.setText("");
@@ -128,7 +132,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
     }
 
     public void findAllPhongban(View view) {
-        DataHandler dbHandler = new DataHandler(this, null,null, null, null, null, null,
+        DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null,1);
         List<Phongban> lst =
                 dbHandler.findAllDataHandler
@@ -146,6 +150,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
                         + " " + st.getPhongbanNamee()
                         + " " + st.getPhongbanNamef()
                         + " " + st.getPhongbanNameg()
+                        + " " + st.getPhongbanNameh()
                         + System.getProperty("line.separator");
                 studentid.setText("");
                 studentname.setText("");

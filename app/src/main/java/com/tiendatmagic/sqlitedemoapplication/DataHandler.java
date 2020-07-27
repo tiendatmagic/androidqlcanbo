@@ -23,9 +23,10 @@ public class DataHandler extends SQLiteOpenHelper {
     public static final String COLUMN_NAMEE = "PhongbanNamee";
     public static final String COLUMN_NAMEF = "PhongbanNamef";
     public static final String COLUMN_NAMEG = "PhongbanNameg";
+    public static final String COLUMN_NAMEH = "PhongbanNameh";
     //phương thức khởi tạo
     public DataHandler(Context context, String name, String namea, String nameb, String namec, String named, String namee,
-                       String namef,String nameg,
+                       String namef,String nameg,String nameh,
                        SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
@@ -38,7 +39,7 @@ public class DataHandler extends SQLiteOpenHelper {
                 TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY," +
                 COLUMN_NAME + " TEXT,"+ COLUMN_NAMEA + " TEXT,"+COLUMN_NAMEB +" TEXT,"+COLUMN_NAMEC+" TEXT,"+COLUMN_NAMED+" TEXT,"+
-                COLUMN_NAMEE+" TEXT,"+COLUMN_NAMEF+" TEXT,"+COLUMN_NAMEG+" TEXT)";
+                COLUMN_NAMEE+" TEXT,"+COLUMN_NAMEF+" TEXT,"+COLUMN_NAMEG+" TEXT,"+COLUMN_NAMEH+" TEXT)";
 
         //thực thi truy vấn
         db.execSQL(CREATE_STUDENTS_TABLE);
@@ -75,9 +76,10 @@ public class DataHandler extends SQLiteOpenHelper {
             String result_6 = cursor.getString(6);
             String result_7 = cursor.getString(7);
             String result_8 = cursor.getString(8);
+            String result_9 = cursor.getString(9);
             //hiển thị mỗi hàng trong một chuỗi
             result += String.valueOf(result_0) + " " + result_1  + " " + result_2 + " " + result_3 + " " + result_4 + " " + result_5
-                    + " " + result_6 + " " + result_7 + " " + result_8 +
+                    + " " + result_6 + " " + result_7 + " " + result_8 + " " + result_9 +
                     System.getProperty("line.separator");
         }
         //đóng đối tượng Cursor
@@ -101,6 +103,7 @@ public class DataHandler extends SQLiteOpenHelper {
         values.put(COLUMN_NAMEE, student.getPhongbanNamee());
         values.put(COLUMN_NAMEF, student.getPhongbanNamef());
         values.put(COLUMN_NAMEG, student.getPhongbanNameg());
+        values.put(COLUMN_NAMEH, student.getPhongbanNameh());
         SQLiteDatabase db = this.getWritableDatabase();
         //chèn dữ liệu đến bảng
         db.insert(TABLE_NAME, null, values);
@@ -130,7 +133,7 @@ public class DataHandler extends SQLiteOpenHelper {
     }
 
     public boolean updateDataHandler(int ID, String name, String namea, String nameb, String namec, String named, String namee,
-                                     String namef,String nameg) {
+                                     String namef,String nameg,String nameh) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues args = new ContentValues();
         args.put(COLUMN_ID, ID);
@@ -142,6 +145,7 @@ public class DataHandler extends SQLiteOpenHelper {
         args.put(COLUMN_NAMEE, namee);
         args.put(COLUMN_NAMEF, namef);
         args.put(COLUMN_NAMEG, nameg);
+        args.put(COLUMN_NAMEH, nameh);
         return db.update(TABLE_NAME, args, COLUMN_ID + " = " + ID, null) > 0;
     }
 
@@ -169,6 +173,7 @@ public class DataHandler extends SQLiteOpenHelper {
             student.setPhongbanNamee(cursor.getString(6));
             student.setPhongbanNamef(cursor.getString(7));
             student.setPhongbanNameg(cursor.getString(8));
+            student.setPhongbanNameh(cursor.getString(9));
             cursor.close();
         } else {
             student = null;
@@ -204,6 +209,7 @@ public class DataHandler extends SQLiteOpenHelper {
                 student.setPhongbanNamee(cursor.getString(6));
                 student.setPhongbanNamef(cursor.getString(7));
                 student.setPhongbanNameg(cursor.getString(8));
+                student.setPhongbanNameh(cursor.getString(9));
                 lst.add(student);
             }while (cursor.moveToNext());
         }
