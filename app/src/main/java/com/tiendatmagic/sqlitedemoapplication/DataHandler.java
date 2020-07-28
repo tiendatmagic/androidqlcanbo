@@ -12,7 +12,7 @@ public class DataHandler extends SQLiteOpenHelper {
 
     // các biến mô tả cơ sở dữ liệu
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "PhongbansDB.db";
+    private static final String DATABASE_NAME = "Tiendatmagic.db";
     public static final String TABLE_NAME = "Phongbans";
     public static final String COLUMN_ID = "PhongbanID";
     public static final String COLUMN_NAME = "PhongbanName";
