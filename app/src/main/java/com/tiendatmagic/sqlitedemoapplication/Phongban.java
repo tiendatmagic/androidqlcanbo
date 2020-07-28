@@ -32,7 +32,7 @@ public class Phongban {
         this._studentnameh = nameh;
         this._studentnamehh = namehh;
     }
-
+// Các bạn có thấy mình đẹp trai không
     //các phương thức truy cập các biến thành viên
 
     public int getPhongbanID(){
@@ -67,7 +67,7 @@ public class Phongban {
     public void setPhongbanNamec(String namec){
         this._studentnamec = namec;
     }
-
+    //© 2020 Copyright by Tiendatmagic
     public String getPhongbanNamed(){
         return this._studentnamed;
     }
@@ -92,7 +92,7 @@ public class Phongban {
         return this._studentnameh;
     }
     public void setPhongbanNameh(String nameh){  this._studentnameh = nameh; }
-
+    // Các bạn có thấy mình đẹp trai không
     public String getPhongbanNamehh(){
         return this._studentnamehh;
     }

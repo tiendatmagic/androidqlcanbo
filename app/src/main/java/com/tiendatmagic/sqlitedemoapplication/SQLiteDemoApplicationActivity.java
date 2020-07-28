@@ -13,7 +13,7 @@ import android.widget.Toast;
 import java.util.List;
 
 public class SQLiteDemoApplicationActivity extends AppCompatActivity {
-
+    // Các bạn có thấy mình đẹp trai không
     TextView datalist;
     EditText studentid;
     EditText studentname;
@@ -45,7 +45,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         studentnamehh = (EditText) findViewById(R.id.phongbannamehh);
         Hello();
         Helloahihi();
-        
+        // Các bạn có thấy mình đẹp trai không
     }
 
     public void Hello()
@@ -57,7 +57,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         dlgAlert.setPositiveButton("OK", null);
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
-
+//© 2020 Copyright by Tiendatmagic
     }
 
     public void  Helloahihi() {
@@ -101,7 +101,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         studentnamehh.setText("");
         Helloahihi();
     }
-
+    // Các bạn có thấy mình đẹp trai không
     public void loadPhongbans(View view) {
         //khởi tạo đối tượng xử lý dữ liệu
         DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
@@ -123,7 +123,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
         studentnamehh.setText("");
         Helloahihi();
     }
-
+    //© 2020 Copyright by Tiendatmagic
     public void deletePhongban(View view) {
         DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null, null,1);
@@ -173,7 +173,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
             studentid.setText("No Match Found");
         Helloahihi();
     }
-
+    //© 2020 Copyright by Tiendatmagic
     public void findFirstPhongban(View view) {
         DataHandler dbHandler = new DataHandler(this,null, null,null, null, null, null, null,
                 null, null,null, null,1);
@@ -274,7 +274,7 @@ public class SQLiteDemoApplicationActivity extends AppCompatActivity {
             studentnamehh.setText("");
         }
     }
-
+//© 2020 Copyright by Tiendatmagic
 }
 
 

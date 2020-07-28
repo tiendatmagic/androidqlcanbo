@@ -31,7 +31,7 @@ public class DataHandler extends SQLiteOpenHelper {
                        SQLiteDatabase.CursorFactory factory, int version) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
-
+    // Các bạn có thấy mình đẹp trai không
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -45,7 +45,7 @@ public class DataHandler extends SQLiteOpenHelper {
         //thực thi truy vấn
         db.execSQL(CREATE_STUDENTS_TABLE);
     }
-
+    //© 2020 Copyright by Tiendatmagic
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion,
                           int newVersion) {
@@ -54,7 +54,7 @@ public class DataHandler extends SQLiteOpenHelper {
         //Tạo bảng mới
         onCreate(db);
     }
-
+    // Các bạn có thấy mình đẹp trai không
     public String loadDataHandler() {
         String result = "";
         //chuỗi truy vấn SELECT
@@ -90,7 +90,7 @@ public class DataHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
-
+    //© 2020 Copyright by Tiendatmagic
     //thêm dữ liệu đến bảng Phongbans
     public void addDataHandler(Phongban student) {
         //tạo đối tượng ContentValues
@@ -112,7 +112,7 @@ public class DataHandler extends SQLiteOpenHelper {
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
-
+    //© 2020 Copyright by Tiendatmagic
     public boolean deleteDataHandler(int ID) {
         boolean result = false;
         String query = "Select * FROM "
@@ -134,7 +134,7 @@ public class DataHandler extends SQLiteOpenHelper {
         db.close();
         return result;
     }
-
+    //© 2020 Copyright by Tiendatmagic
     public boolean updateDataHandler(int ID, String name, String namea, String nameb, String namec, String named, String namee,
                                      String namef,String nameg,String nameh,String namehh) {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -225,7 +225,7 @@ public class DataHandler extends SQLiteOpenHelper {
         //trả về danh sách sinh viên tìm được
         return lst;
     }
-
+//© 2020 Copyright by Tiendatmagic
 
 
 }
